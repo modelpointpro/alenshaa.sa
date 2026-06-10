@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة الإنشاءات الحديثة</title>
+    <!-- استدعاء خطوط جوجل العربية (خط الكايرو) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* الألوان والأساسيات */
+        :root {
+            --primary-color: #1a365d; /* أزرق داكن (يعبر عن الثقة والمقاولات) */
+            --secondary-color: #ed8936; /* برتقالي (يعبر عن الإبداع والإعلان) */
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* الهيدر والقائمة */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* القسم الرئيسي (البانر) */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+
+        .btn {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #dd6b20;
+            transform: scale(1.05);
+        }
+
+        /* قسم الخدمات */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            display: block;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 50px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* قسم التواصل */
+        .contact {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .contact-item i {
+            font-size: 30px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            direction: ltr;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #112240;
+            color: #a0aec0;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* تصميم متجاوب للجوال */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">
+            <h1>الإنشاءات <span>الحديثة</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- البانر الترحيبي -->
+    <section id="hero" class="hero">
+        <h2>نبني رؤيتك.. ونبرز هويتك</h2>
+        <p>مؤسسة رائدة في جدة تقدم حلولاً متكاملة في المقاولات العامة، صيانة المباني، والدعاية والإعلان.</p>
+        <a href="https://wa.me/966555989166" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا الآن</a>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services" class="services">
+        <h2 class="section-title">خدماتنا المتميزة</h2>
+        <div class="cards">
+            <!-- الخدمة 1 -->
+            <div class="card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>المقاولات العامة</h3>
+                <p>تنفيذ وإدارة كافة الأعمال الإنشائية والمعمارية بدقة متناهية، وتحويل المخططات إلى واقع ملموس يعكس المتانة والجودة.</p>
+            </div>
+            <!-- الخدمة 2 -->
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>صيانة المباني</h3>
+                <p>حلول صيانة دورية وشاملة للمباني السكنية والتجارية (كهرباء، سباكة، ترميم) لضمان استدامتها وسلامتها.</p>
+            </div>
+            <!-- الخدمة 3 -->
+            <div class="card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>الدعاية والإعلان</h3>
+                <p>ابتكار حملات ترويجية، وتصاميم إعلانية جذابة، وحلول تسويقية تساعد في بناء علامتك التجارية والوصول لشريحة أوسع.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="contact">
+        <h2 class="section-title" style="color: #fff;">دعنا نبدأ مشروعك القادم</h2>
+        <p>فريقنا مستعد دائماً لخدمتكم وتلبية احتياجاتكم في مدينة جدة وكافة الأنحاء.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>العنوان</span>
+                <p>جدة، المملكة العربية السعودية</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>رقم الجوال</span>
+                <a href="tel:0555989166">0555989166</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>البريد الإلكتروني</span>
+                <a href="mailto:alenshaa11@gmail.com">alenshaa11@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; 2024 مؤسسة الإنشاءات الحديثة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
